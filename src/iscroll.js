@@ -426,8 +426,8 @@ iScroll.prototype = {
 			newY = that.options.bounce ? that.y + (deltaY / 2) : newY >= that.minScrollY || that.maxScrollY >= 0 ? that.minScrollY : that.maxScrollY;
 		}
 
-		that.distX += deltaX;
-		that.distY += deltaY;
+		that.distX += that.hScroll ? deltaX : 0;
+		that.distY += that.vScroll ? deltaY : 0;
 		that.absDistX = m.abs(that.distX);
 		that.absDistY = m.abs(that.distY);
 
